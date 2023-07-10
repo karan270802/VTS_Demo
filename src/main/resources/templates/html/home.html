@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+	<meta name="viewport" content="with=device-width, initial-scale=1.0">
+	<title>PRINTING AND SOLUTIONS</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+	<section class="header">
+		<nav>
+			<a href="home"><img src="/img/vts_2.png"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="home">HOME</a></li>
+					<li><a href="product">PRODUCT</a></li>
+					<li><a href="about">ABOUT US</a></li>
+					<li><a href="contact">CONTACT</a></li>
+				</ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<div class="text-box">
+			<h1>Virtue Technology Solutions</h1>
+			<p>World class marketing specialist and industrial printing solutions</p>
+			<a href="contact" class="hero-btn" type="button">Visit Us To Know More</a>
+		</div>
+	</section>
+
+	<!-------featured products------>
+
+	<div class="small-container">
+		<h2 class="title">Featured Products</h2>
+		<div class="row">
+			<div class="col-4" th:each="product : ${top4Products}" th:value="${product.id}">
+				<img th:src="${product.imageFileName}" >
+				<a th:value="${product.id}" th:onclick="redirectToProductDetail(this.getAttribute('value'))" class="btn">View Product &#8594;</a>
+			</div>
+		</div>
+	</div>
+	
+	<!------offers---->
+
+	<div class="offer">
+		<div class="small-container">
+			<div class="row">
+				<div class="col-2">
+					<img src="/img/linx-printers.webp" class="offer-img">
+				</div>
+				<div class="col-2">
+					<p>Exclusively Available on Virtue Printing</p>
+					<h1>Products</h1>
+					<small>Our industrial and marketing products are renowned for their ease of use, reliability and low
+						cost of ownership<br></small>
+					<a href="product" class="btn">Find your product &#8594;</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-------Footer-------->
+	<script th:src="@{/js/script.js}"></script>
+	
+	<section class="footer">
+		<h2 style="color: #ff432b;">VIRTUE TECHNOLOGY SOLUTIONS</h2>
+		<p style="color: #ffffff;">26, Monilal Saha Lane, kolkata - 700013<br>Mobile - 7044112211, 9831908645</p>
+		<div class="icons">
+			<i class="fab fa-facebook-f"></i>
+			<i class="fab fa-twitter"></i>
+			<i class="fab fa-instagram"></i>
+			<i class="fab fa-linkedin-in"></i>
+		</div>
+		<p style="color: #ffffff;">Made With <i class="far fa-heart"></i> by KT Tutorials</p>
+	</section>
+
+
+	<script>
+		var navLinks = document.getElementById("navLinks")
+		function showMenu() {
+			navLinks.style.right = "0";
+
+		}
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+	</script>
+
+
+
+</body>
+
+</html>

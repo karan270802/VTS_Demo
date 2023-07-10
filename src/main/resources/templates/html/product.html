@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<title>Products</title>
+</head>
+<style>
+	/* Style for product grids */
+	.product-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: 30px;
+		animation: slide2 5s;
+	}
+
+	.product-grid2 {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: 30px;
+		animation: slide2 5s;
+	}
+
+	@keyframes slide2 {
+		from {
+			opacity: 0.1;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	.product-grid-item {
+		border: 1px solid #ddd;
+		padding: 10px;
+		text-align: center;
+		cursor: pointer;
+		transition: 0.5s;
+	}
+
+	.product-grid-item:hover {
+		box-shadow: 1px 20px 20px 0px #ff523b;
+	}
+
+	.product-grid-item img {
+		max-width: 200px;
+		margin: 10px;
+		height: 150px;
+		transition: 0.5s;
+		cursor: pointer;
+	}
+
+	/* .product-grid-item img:hover {
+        height: 180px;
+        box-shadow: 1px 20px 20px 0px grey;
+    } */
+
+	/* Style for sorting options */
+	.sorting {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 20px;
+	}
+
+	.sorting label {
+		margin-right: 10px;
+	}
+</style>
+
+<body>
+
+	<section class="sub-header2">
+		<nav>
+			<a href="home"><img src="/img/vts_2.png"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="home">HOME</a></li>
+					<li><a href="product">PRODUCT</a></li>
+					<li><a href="about">ABOUT US</a></li>
+					<li><a href="contact">CONTACT</a></li>
+				</ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+	</section>
+
+	<div class="main small-container">
+		<div class=" row row-2">
+			<h2>All Products</h2>
+			<select id="sort-by">
+				<option value="name-asc">Name (A-Z)</option>
+				<option value="name-desc">Name (Z-A)</option>
+				<option value="price-asc">Price (Low to High)</option>
+				<option value="price-desc">Price (High to Low)</option>
+				<option value="rating-desc">Rating (High to Low)</option>
+			</select>
+		</div>
+
+		<div class="product-grid2">
+			<div th:each="product : ${products}" class="product-grid-item" th:id="${product.productIdentifier}" th:value="${product.id}"
+				th:onclick="redirectToProductDetail(this.getAttribute('value'))">
+				<img th:src="${product.imageFileName}" th:alt="${product.name}">
+				<h3 th:text="${product.name}"></h3>
+			</div>
+		</div>
+		
+		<div id="product-details" style="display: none;">
+			<h2 id="product-name"></h2>
+			<img id="product-image">
+			<p>Rating: <span id="product-rating"></span></p>
+			<p>Price: $<span id="product-price"></span></p>
+			<p>Review: <span id="product-review"></span></p>
+			<button id="go-back-btn">Go Back</button>
+		</div>
+
+		<div class="page-btn">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>&#8594;</span>
+		</div>
+	</div>
+
+	<script th:src="@{/js/script.js}"></script>
+
+	<!-------Footer-------->
+
+	<section class="footer">
+		<h2 style="color: #ff432b;">VIRTUE TECHNOLOGY SOLUTIONS</h2>
+		<p style="color: #ffffff;">26, Monilal Saha Lane, kolkata - 700013<br>Mobile - 7044112211, 9831908645</p>
+		<div class="icons">
+			<i class="fab fa-facebook-f"></i>
+			<i class="fab fa-twitter"></i>
+			<i class="fab fa-instagram"></i>
+			<i class="fab fa-linkedin-in"></i>
+		</div>
+		<p style="color: #ffffff;">Made With <i class="far fa-heart"></i> by KT Tutorials</p>
+	</section>
+
+
+	<script>
+		var navLinks = document.getElementById("navLinks")
+		function showMenu() {
+			navLinks.style.right = "0";
+
+		}
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+	</script>
+
+</body>
+
+</html>

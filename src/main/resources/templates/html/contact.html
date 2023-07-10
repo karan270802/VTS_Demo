@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+	<meta name="viewport" content="with=device-width, initial-scale=1.0">
+	<title>PRINTING AND SOLUTIONS</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+	<section class="karan1">
+		<section class="sub-header2">
+			<nav>
+				<a href="home"><img src="/img/vts_2.png"></a>
+				<div class="nav-links" id="navLinks">
+					<i class="fa fa-times" onclick="hideMenu()"></i>
+					<ul>
+						<li><a href="home">HOME</a></li>
+						<li><a href="product">PRODUCT</a></li>
+						<li><a href="about">ABOUT US</a></li>
+						<li><a href="contact">CONTACT</a></li>
+					</ul>
+				</div>
+				<i class="fa fa-bars" onclick="showMenu()"></i>
+			</nav>
+		</section>
+
+		<!----contact us page---->
+
+		<div class="small-container">'
+			<h2 class="title contact-title">Contact Us</h2>
+		</div>
+		<section class="location">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.430821849875!2d88.35424827414906!3d22.562984633324824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02770742e8aa05%3A0x50402e2225a1275a!2s26%2C%20Monilal%20Saha%20Ln%2C%20Esplanade%2C%20Janbazar%2C%20Taltala%2C%20Kolkata%2C%20West%20Bengal%20700013!5e0!3m2!1sen!2sin!4v1682442270211!5m2!1sen!2sin"
+				width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</section>
+
+		<section class="contact-us">
+			<div class="row">
+				<div class="contact-col">
+					<div>
+						<i class="fas fa-home"></i>
+						<span>
+							<h5>26, Monilal Saha Lane</h5>
+							<p>KOLKATA - 700013</p>
+						</span>
+					</div>
+					<div>
+						<i class="fas fa-phone"></i>
+						<span>
+							<h5>+91 7044112211 , +91 9831908645</h5>
+							<p>Monday to Satarday, 10AM to 6PM</p>
+						</span>
+					</div>
+					<div>
+						<i class="fas fa-envelope"></i>
+						<span>
+							<h5>info@gmail.com</h5>
+							<p>Email us your query</p>
+						</span>
+					</div>
+				</div>
+				<div class="contact-col">
+					<form onsubmit="sendEmail(); reset(); return false;">
+						<input type="text" name="name" placeholder="Enter your name" required>
+						<input type="email" name="email" placeholder="Enter your email" required>
+						<input type="phone number" name="phone number" placeholder="Enter your number" required>
+						<textarea rows="8" name="message" placeholder="Message"></textarea>
+						<button type="submit" class="hero-btn red-btn" value="Send Email">Send Message</button>
+					</form>
+
+				</div>
+			</div>
+		</section>
+	</section>
+
+	<!-------Footer-------->
+
+	<section class="footer">
+		<h2 style="color: #ff432b;">VIRTUE TECHNOLOGY SOLUTIONS</h2>
+		<p style="color: #ffffff;">26, Monilal Saha Lane, kolkata - 700013<br>Mobile - 7044112211, 9831908645</p>
+		<div class="icons">
+			<i class="fab fa-facebook-f"></i>
+			<i class="fab fa-twitter"></i>
+			<i class="fab fa-instagram"></i>
+			<i class="fab fa-linkedin-in"></i>
+		</div>
+		<p style="color: #ffffff;">Made With <i class="far fa-heart"></i> by KT Tutorials</p>
+	</section>
+
+
+	<!------js for toggle menu------>
+
+	<script src="https://smtpjs.com/v3/smtp.js">
+	</script>
+
+	<script type="text/javascript">
+		function sendEmail() {
+			Email.send({
+				Host: "smtp.gmail.com",
+				Username: "sender@email_address.com",
+				Password: "Enter your password",
+				To: 'receiver@email_address.com',
+				From: "sender@email_address.com",
+				Subject: "Sending Email using javascript",
+				Body: "Well that was easy!!",
+			})
+				.then(function (message) {
+					alert("mail sent successfully")
+				});
+		}
+
+
+		// var MenuItems = document.getElementById("MenuItems");
+
+		// MenuItems.style.maxHeight = "0px";
+
+		// function menutoggle(){
+		//     if(MenuItems.style.maxHeight == "0px")
+		//     {
+		//         MenuItems.style.maxHeight = "200px";
+		//     }
+		//     else{
+		//         MenuItems.style.maxHeight = "0px";
+		//     }
+		// }
+
+		var navLinks = document.getElementById("navLinks")
+		function showMenu() {
+			navLinks.style.right = "0";
+
+		}
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+        // Function to send the mail when user click on send button
+        // function sendMail(params) {
+        //     var tempParams = {
+        //         from_name:document.getElementById("fromName").value,
+        //         to_name:document.getElementById("toName").value,
+        //         message:document.getElementById("msg").value,
+        //     };
+
+        //     emailjs.send('service_1q2q9qf','template_1q2q9qf',tempParams)
+        //     .then(function(res){
+        //         console.log("success",res.status);
+        //     })
+        // }
+
+	</script>
+</body>
+
+</html>

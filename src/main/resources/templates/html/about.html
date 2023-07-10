@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> 
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="home"><img src="/img/vts_2.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="home">HOME</a></li>
+                    <li><a href="product">PRODUCT</a></li>
+                    <li><a href="about">ABOUT US</a></li>
+                    <li><a href="contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>About Us</h1>
+    </section>
+
+    <section class="head1">
+        <div class="col-1">
+            <h1 style="color: #f44336;">About Virtue Printing Technology</h1>
+            <p>Virtue Printing Technology Technologies Ltd (Linx) is a leading global coding and marking solutions manufacturer, and our products are renowned globally. Established in 1987, Virtue Printing Technologyis part of the Danaher Group's Product Identification platform. Manufacturing industries across the world benefit from our expertise in batch and date coding of products and packaging.<br><br>
+
+                Virtue Printing Technologyholds a large and growing worldwide market share, achieved by continuing emphasis on engineering excellence and best in class products, outstanding marketing and customer service, and professional management.<br><br>
+                
+                Well known for reliability, ease of use and low cost of ownership, Virtue Printing Technology and marking solutions code millions of items every day and through our network of specialist distributors and overseas sales offices, are supported by best in class customer care. </p>
+        </div>
+        <div class="col-1">
+            <h2 style="color: #f44336;">Virtue Printing Technology experienced network in India</h2>
+            <p>Virtue Printing Technology Technologies has over 15 years experience in India, fulfilling the needs of an emerging and ever growing demand of entrepreneurs, proprietors and businesses with batch coding printers and marking machines.<br><br>
+
+                Across India, Virtue Printing Technologyhas an extensive and highly experienced network of distributors with skilled sales and service engineers, providing you with the batch and date printing solutions and support you need for your business. <br><br>
+                
+                Your local Virtue Printing TechnologyIndia channel partner network provides:<br><br>
+                
+                Local support, with skilled servicing, aftercare, and training for your Virtue Printing Technologyinkjet printers<br>
+                Range of Virtue Printing Technology and marking solutions with a wide range of ink types to meet your date and batch coding needs<br>
+                Free sample marking service and printer demonstrations, to find the best solution for your product<br><br>
+                Virtue Printing Technologyhas dealers and distributors across India, covering all states and cities, including Delhi, Pune, Mumbai, Bangalore, Kerala, Chennai, Tamil Nadu and Ahmedabad, to name a few, along with all other regions and cities near to you.</p>
+        </div>
+        <div class="col-1">
+            <h2 style="color: #f44336;">Virtue Printing Technology Products</h2>
+            <p>Virtue Printing Technology and marking machines offer high quality marking for date, MRP, batch, lot and QR codes, graphics and logos. <br><br>
+
+                Benefits of Virtue Printing Technology solutions:<br><br>
+                
+                High quality coding - high quality date, batch code, MRP printing<br>
+                High quality coding - high quality date, batch code, MRP printing<br>
+                Low running costs - low cost of ownership, minimal maintenance<br>
+                User friendly operation - the easy to use touch screen & user interface reduces the chance of printing errors<br>
+                Minimal downtime - robust build quality and a reliable product minimises downtime <br>
+                Technology solutions - industrial inkjet, laser coding and thermal transfer printers<br>
+                Dedicated India support - local, skilled care for your printer from highlyskilled service engineers who deliver a prompt service, one of the fastest among all competitors<br>
+                Range of CIJ inks - a wide range of black, coloured and white inks to print onto your product</p>
+        </div>
+        <div class="col-1">
+            <h2 style="color: #f44336;">Virtue Printing Technology Values</h2>
+            <p>Since its formation in 1987 Virtue Printing Technologyhas earned a reputation for its thoughtfully designed and well engineered products. The company has consistently invested a high percentage of turnover in research and development. Virtue Printing Technologyis one of the industry's top research spenders in relation to its turnover.<br><br>
+
+                Virtue Printing Technologyand marking machines are designed as simply as possible to ensure trouble-free operation, deliver maximum production uptime and low cost of ownership over the lifetime of the product.<br><br>
+                
+                All Virtue Printing Technologydistributors meet the highest standards when it comes to top of the range after-sales service and customer support for our coding and marking machines.</p>
+        </div>
+    </section>
+
+    <!-------Footer-------->
+
+    <section class="footer">
+        <h2 style="color: #ff432b;">VIRTUE TECHNOLOGY SOLUTIONS</h2>
+        <p style="color: #ffffff;">26, Monilal Saha Lane, kolkata - 700013<br>Mobile - 7044112211, 9831908645</p>
+        <div class="icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+        </div>
+        <p style="color: #ffffff;">Made With <i class="far fa-heart"></i> by KT Tutorials</p>
+    </section>
+
+        
+    <script>
+        var navLinks = document.getElementById("navLinks")
+        function showMenu(){
+            navLinks.style.right ="0";
+
+        }
+        function hideMenu(){
+            navLinks.style.right ="-200px";
+        }
+    </script>
+
+
+
+</body>
+</html>

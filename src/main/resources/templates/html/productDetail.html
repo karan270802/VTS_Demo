@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+	<title>Single Product Listing</title>
+</head>
+
+<body>
+	<section class="sub-header2">
+		<nav>
+			<a href="home.html"><img src="/img/vts_2.png"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="home">HOME</a></li>
+					<li><a href="product">PRODUCT</a></li>
+					<li><a href="about">ABOUT US</a></li>
+					<li><a href="contact">CONTACT</a></li>
+				</ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+	</section>
+
+	<form class="small-container single-product" th:object="${product}">
+		<div class="row">
+			<div class="col-2">
+				<img th:src="${product.imageFileName}" width="80%" class="product-img">
+			</div>
+			<div class="col-2">
+				<h5 class="category" th:text="${product.category}"></h5>
+				<h1 class="product-title" th:text="${product.name}"></h1>
+				<h3>Product Details</h3>
+				<br>
+				<p class="product-details"  th:text="${product.details}"></p>
+			</div>
+		</div>
+	</form>
+
+	<!-------Footer-------->
+
+	<section class="footer">
+		<h2 style="color: #ff432b;">VIRTUE TECHNOLOGY SOLUTIONS</h2>
+		<p style="color: #ffffff;">26, Monilal Saha Lane, kolkata - 700013<br>Mobile - 7044112211, 9831908645</p>
+		<div class="icons">
+			<i class="fab fa-facebook-f"></i>
+			<i class="fab fa-twitter"></i>
+			<i class="fab fa-instagram"></i>
+			<i class="fab fa-linkedin-in"></i>
+		</div>
+		<p style="color: #ffffff;">Made With <i class="far fa-heart"></i> by KT Tutorials</p>
+	</section>
+
+	<!-- Bootstrap 4 JS & jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
