@@ -24,7 +24,7 @@ public class VtsDemoController {
 	@GetMapping("/home")
 	public String getHome(Model model) {
 		model.addAttribute("top4Products",service.getTop4Products());
-		return "html/home";
+		return "html/index";
 	}
 	
 	@GetMapping("/contact")
